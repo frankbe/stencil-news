@@ -1,4 +1,4 @@
-importScripts('workbox-sw.prod.v1.1.0.js');
+importScripts('workbox-sw.prod.v2.1.0.js');
 
 /**
  * DO NOT EDIT THE FILE MANIFEST ENTRY
@@ -20,47 +20,43 @@ importScripts('workbox-sw.prod.v1.1.0.js');
 const fileManifest = [
   {
     "url": "ads/ad.html",
-    "revision": "408aed0261024e1d5ff2c8a6b0458d2e"
+    "revision": "30d2124ba2f7a96ab30dfa01d173843f"
   },
   {
     "url": "build/app.js",
-    "revision": "fdd58529c3eb8bcd85aca8a299200e6c"
+    "revision": "0093131784535a0a0d1cd2de271747c1"
   },
   {
-    "url": "build/app.registry.json",
-    "revision": "eee496ed21e220f7be999cb68741fba4"
+    "url": "build/app/app-detail.js",
+    "revision": "9e89950d85a6b18146a9f7a3ae45c372"
   },
   {
-    "url": "build/app\\3t1gedldn6t4.css",
-    "revision": "16753566796c394451c57bd642cbeadf"
+    "url": "build/app/app-header.js",
+    "revision": "2fecca36caceaa20076bf79f296104e6"
   },
   {
-    "url": "build/app\\9xuervfc3ecy.css",
-    "revision": "faddfe54ef3762fdfae5fd8421368b63"
+    "url": "build/app/app-list.js",
+    "revision": "ab3fdb099541e1e418aa24d5ff69ffd7"
   },
   {
-    "url": "build/app\\app.gpsuqcrkyawe.js",
-    "revision": "cd2407a4c217a39ce8d4fdbab37c7dbc"
+    "url": "build/app/app-login.js",
+    "revision": "4547388351feefb5977083de7e5169bf"
   },
   {
-    "url": "build/app\\app.zl1d3inmkul0.ce.js",
-    "revision": "72d5a85bff70ea45217700cccb6d047f"
+    "url": "build/app/app-toast.js",
+    "revision": "6a284231a3b4f5c7ae6de511f4ccbd94"
   },
   {
-    "url": "build/app\\bgm9gptorepe.css",
-    "revision": "dfae438557c3a8f2dc2edf48f3e97653"
+    "url": "build/app/app.core.js",
+    "revision": "0aaf682040e155458385569c59d09531"
   },
   {
-    "url": "build/app\\nocanrjeydzn.js",
-    "revision": "57e306798b91289977a14101603a0713"
+    "url": "build/app/app.core.pf.js",
+    "revision": "bb4f5a37a36c79344b3196d5101f5221"
   },
   {
-    "url": "build/app\\t3i6afkoo90s.js",
-    "revision": "95d6132216909cbd81389b0f8a096a79"
-  },
-  {
-    "url": "build/app\\w2slvz9rltap.js",
-    "revision": "8bc11b17d33b843bf3f5a69a17aad2ad"
+    "url": "build/app/app.registry.json",
+    "revision": "ef27afe68b540a817bd02081c2242d63"
   },
   {
     "url": "favicon.ico",
@@ -68,17 +64,28 @@ const fileManifest = [
   },
   {
     "url": "firebase-messaging-sw.js",
-    "revision": "5bde178351ddd4de96ff915c113a23f3"
+    "revision": "bfd265ba9be65a2b644da6e2749b4fd0"
+  },
+  {
+    "url": "images/512.png",
+    "revision": "bd715a7318045ab5a167ca52cd689440"
   },
   {
     "url": "index.html",
-    "revision": "e874e0bf5180f559351d43485452208c"
+    "revision": "bd1050498d4736f1148cc1fa7172827a"
   },
   {
     "url": "manifest.json",
-    "revision": "7affde00c804e8fc7fc259b1b79b7499"
+    "revision": "14131a92ed197c530fbef888b7b724e2"
+  },
+  {
+    "url": "workbox-sw.prod.v1.1.0.js",
+    "revision": "df86dfc69c6d017722ecb8a16d34c849"
   }
 ];
 
-const workboxSW = new self.WorkboxSW();
+const workboxSW = new self.WorkboxSW({
+  "skipWaiting": true,
+  "clientsClaim": true
+});
 workboxSW.precache(fileManifest);
